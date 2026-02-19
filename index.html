@@ -3184,9 +3184,7 @@
                     </svg>
                 </div>
                 <h3 class="contact-label">Email</h3>
-                <a href="/cdn-cgi/l/email-protection#8bc7e4f8eef9f8cceeffd2e4fef9caf8f8c0e2e8e0eeefcbece6eae2e7a5e8e4e6"
-                    class="contact-link"><span class="__cf_email__"
-                        data-cfemail="2e62415d4b5c5d694b5a77415b5c6f5d5d65474d454b4a6e49434f4742004d4143">[email&#160;protected]</span></a>
+                <a href="mailto:lozers.show@gmail.com" class="contact-link">lozers.show@gmail.com</a>
             </div>
 
             <div class="contact-card fade-in">
@@ -3244,7 +3242,6 @@
         <div class="footer-copy">© <script>document.write(new Date().getFullYear())</script> LOZERS. ALL RIGHTS RESERVED.</div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // Configuration
         const RAZORPAY_KEY_ID = 'rzp_live_SHgl4ZiJOd3VO6';
@@ -3733,7 +3730,10 @@
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         // Page Loader
+        var loaderHidden = false;
         function hideLoader() {
+            if (loaderHidden) return;
+            loaderHidden = true;
             var loader = document.getElementById('pageLoader');
             if (loader) {
                 loader.style.transition = 'opacity 0.5s ease';
@@ -3745,9 +3745,12 @@
             try { animateValue('statApplicants', 0, 500, 200); } catch (e) { }
         }
 
-        // Hide loader after progress bar animation completes (~2s)
+        // Hide on DOMContentLoaded (fastest)
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(hideLoader, 2100); });
+        // Hide on full load
         window.addEventListener('load', function () { setTimeout(hideLoader, 300); });
-        setTimeout(hideLoader, 3000); // Nuclear fallback
+        // Nuclear fallback — always fires
+        setTimeout(hideLoader, 2500);
 
     </script>
 </body>
