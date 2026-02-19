@@ -451,10 +451,11 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            padding: 6rem var(--mobile-padding) 4rem;
-            gap: 2rem;
+            padding: 5rem var(--mobile-padding) 5rem;
+            gap: 3rem;
             position: relative;
             overflow: hidden;
+            justify-content: center;
         }
 
         .hero-left {
@@ -463,9 +464,9 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 var(--mobile-padding);
+            padding: 0;
             z-index: 2;
-            order: 2;
+            order: 1;
         }
 
         .hero-right {
@@ -473,8 +474,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            order: 1;
-            padding: 1rem;
+            order: 2;
+            padding: 0;
             perspective: 1000px;
         }
 
@@ -502,10 +503,10 @@
         }
 
         .hero-title {
-            font-size: clamp(2.8rem, 12vw, 5rem);
+            font-size: clamp(2.5rem, 11vw, 5rem);
             font-weight: 900;
             line-height: 1.05;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             letter-spacing: -0.03em;
         }
 
@@ -551,12 +552,12 @@
         }
 
         .hero-desc {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--gray-light);
             max-width: 100%;
-            line-height: 1.9;
+            line-height: 1.8;
             margin-bottom: 2rem;
-            padding: 0 0.5rem;
+            padding: 0;
         }
 
         .hero-buttons {
@@ -1327,15 +1328,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             position: sticky;
-            top: 0;
-            background: linear-gradient(165deg, rgba(30, 30, 40, 0.98), rgba(15, 15, 20, 0.99));
+            top: -1.5rem;
+            background: rgb(18, 18, 26);
             z-index: 20;
             margin: -1.5rem -1.5rem 1.5rem -1.5rem;
-            padding: 1rem 1.5rem;
+            padding: 1.1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 77, 0, 0.18);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.45);
         }
 
         .card-step {
@@ -2684,8 +2684,8 @@
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon">💰</div>
-                <h3 class="feature-title">Real Cash Prize</h3>
-                <p class="feature-desc">Har episode ka winner cash prize lekar jaata hai. Amount TBA — but it's real money for real talent. Koi fake promise nahi.</p>
+                <h3 class="feature-title">Real Big Prize</h3>
+                <p class="feature-desc">Har episode ka winner ek bada prize lekar jaata hai. Amount TBA — but it's real reward for real talent. Koi fake promise nahi.</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon">🔥</div>
@@ -2773,7 +2773,7 @@
                 <div class="episode-num">STEP<br>04</div>
                 <div class="episode-info">
                     <h4>Episode Winner — Crowned On The Spot</h4>
-                    <p>Us episode ka best performer winner declare hota hai — wahi raat, wahi episode. Cash prize milta hai. Baaki sab? LOZERS. Agle episode mein naye contestants, fresh battle.</p>
+                    <p>Us episode ka best performer winner declare hota hai — wahi raat, wahi episode. Big prize milta hai. Baaki sab? LOZERS. Agle episode mein naye contestants, fresh battle.</p>
                     <span class="episode-tag tag-final">Winner 🏆</span>
                 </div>
             </div>
@@ -2854,16 +2854,16 @@
     <section class="prize-section" id="prize">
         <div class="prize-box fade-in">
             <div class="prize-glow-ring">🏆</div>
-            <div class="prize-tbd">CASH<br>PRIZE</div>
-            <div class="prize-label">Har Episode Ka Winner Lekar Jaata Hai — Amount Coming Soon</div>
+            <div class="prize-tbd">BIG<br>PRIZE</div>
+            <div class="prize-label">Har Episode Ka Winner Lekar Jaata Hai — Stay Tuned</div>
             <p class="prize-desc">
-                Prize amount abhi officially announce nahi hua — lekin <strong>har episode ka winner cash prize lekar jaata hai.</strong>
+                Prize abhi officially announce nahi hua — lekin <strong>har episode ka winner ek bada prize lekar jaata hai.</strong>
                 Jitne zyada contestants, utna bada prize pool. <strong>Teri entry prize ko grow karti hai.</strong>
                 Announcement ka wait karo — ya abhi apply karke ready raho.
             </p>
             <div class="prize-perks">
                 <div class="prize-perk">🏆 Episode Winner Crown</div>
-                <div class="prize-perk">💰 Cash Prize (TBA)</div>
+                <div class="prize-perk">🎁 Big Prize (TBA)</div>
                 <div class="prize-perk">📲 Social Media Feature</div>
                 <div class="prize-perk">🎬 Episode Highlight Clip</div>
                 <div class="prize-perk">🔥 Bragging Rights Forever</div>
@@ -2933,7 +2933,7 @@
                 <div class="timeline-dot">04</div>
                 <div class="timeline-content">
                     <h3 class="timeline-title">Stage Pe Aa, Perform Kar, Jeet</h3>
-                    <p class="timeline-desc">Episode mein aao, apna talent dikhao, judges ka verdict suno — aur agar tu sach mein best hai, toh us episode ka winner crown mil jaata hai. Cash prize. Baaki sab? LOZERS.</p>
+                    <p class="timeline-desc">Episode mein aao, apna talent dikhao, judges ka verdict suno — aur agar tu sach mein best hai, toh us episode ka winner crown mil jaata hai. Big prize. Baaki sab? LOZERS.</p>
                 </div>
             </div>
         </div>
@@ -3184,7 +3184,7 @@
                     </svg>
                 </div>
                 <h3 class="contact-label">Email</h3>
-                <a href="mailto:lozers.show@gmail.com" class="contact-link">lozers.show@gmail.com</a>
+                <a href="mailto:LosersGetYourAssKicked@gmail.com" class="contact-link">LosersGetYourAssKicked@gmail.com</a>
             </div>
 
             <div class="contact-card fade-in">
