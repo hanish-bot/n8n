@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         :root {
             --bg: #050507;
@@ -1122,60 +1123,65 @@
         }
 
         .timeline {
-            max-width: 800px;
+            max-width: 680px;
             margin: 0 auto;
             position: relative;
+            padding-left: 0;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
+            left: 24px;
+            top: 24px;
+            bottom: 24px;
             width: 2px;
             background: linear-gradient(180deg, var(--accent), var(--purple), var(--blue));
         }
 
         .timeline-item {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.75rem;
             position: relative;
         }
 
         .timeline-dot {
-            width: 42px;
-            height: 42px;
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
             background: linear-gradient(135deg, var(--accent), var(--purple));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             flex-shrink: 0;
-            box-shadow: 0 5px 20px rgba(255, 77, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 77, 0, 0.35);
             z-index: 1;
+            position: relative;
         }
 
         .timeline-content {
             flex: 1;
-            padding: 1.25rem;
+            padding: 1.25rem 1.5rem;
             background: linear-gradient(165deg, rgba(25, 25, 35, 0.9), rgba(10, 10, 15, 0.95));
             border: 1px solid rgba(255, 77, 0, 0.15);
             border-radius: 16px;
             backdrop-filter: blur(10px);
+            margin-top: 0.2rem;
         }
 
         .timeline-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
         .timeline-desc {
-            font-size: 0.85rem;
+            font-size: 0.875rem;
             color: var(--gray-light);
             line-height: 1.7;
         }
@@ -1738,6 +1744,48 @@
 
         .contact-link:hover {
             color: var(--accent);
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            margin: 3rem auto 1rem;
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .qr-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .qr-desc {
+            font-size: 0.8rem;
+            color: var(--gray-light);
+            margin-bottom: 1.25rem;
+        }
+
+        .qr-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 16px;
+            display: inline-block;
+            box-shadow: 0 8px 32px rgba(255, 77, 0, 0.25), 0 0 0 3px rgba(255, 77, 0, 0.3);
+        }
+
+        .qr-box canvas, .qr-box img {
+            display: block;
+        }
+
+        .qr-url {
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--gray-light);
+            letter-spacing: 0.05em;
         }
 
         .social-section {
@@ -2412,31 +2460,17 @@
             }
 
             .timeline-item {
-                justify-content: center;
-            }
-
-            .timeline-item:nth-child(odd) {
-                flex-direction: row-reverse;
-                text-align: right;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content {
-                margin-right: 2rem;
-                margin-left: 0;
-            }
-
-            .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 2rem;
+                justify-content: flex-start;
             }
 
             .timeline-dot {
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
+                position: relative;
+                left: auto;
+                transform: none;
             }
 
             .timeline-content {
-                max-width: 350px;
+                max-width: 100%;
             }
 
             .apply-section {
@@ -3199,6 +3233,16 @@
             </div>
         </div>
 
+        <!-- QR Code -->
+        <div class="qr-section fade-in">
+            <h3 class="qr-title">Scan to Apply</h3>
+            <p class="qr-desc">Mobile pe scan karo aur direct site pe aa jao</p>
+            <div class="qr-box">
+                <div id="qrcode"></div>
+            </div>
+            <p class="qr-url">hanish-bot.github.io/n8n</p>
+        </div>
+
         <!-- Social Media -->
         <div class="social-section fade-in">
             <h3 class="social-title">Follow Us</h3>
@@ -3246,6 +3290,21 @@
         // Footer year
         var fy = document.getElementById('footerYear');
         if (fy) fy.textContent = new Date().getFullYear();
+
+        // QR Code Generation
+        document.addEventListener('DOMContentLoaded', function() {
+            var qrEl = document.getElementById('qrcode');
+            if (qrEl && typeof QRCode !== 'undefined') {
+                new QRCode(qrEl, {
+                    text: 'https://hanish-bot.github.io/n8n/',
+                    width: 180,
+                    height: 180,
+                    colorDark: '#ff4d00',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            }
+        });
 
         // Configuration
         const RAZORPAY_KEY_ID = 'rzp_live_SHgl4ZiJOd3VO6';
@@ -3618,16 +3677,14 @@
 
         async function submitToGoogleSheets(data) {
             try {
-                const controller = new AbortController();
-                const timeout = setTimeout(() => controller.abort(), 10000);
+                // Use no-cors so request reaches Google Sheets even without CORS headers
                 await fetch(GOOGLE_SHEETS_URL, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'text/plain' },
-                    body: JSON.stringify(data),
-                    signal: controller.signal
+                    body: JSON.stringify(data)
                 });
-                clearTimeout(timeout);
-                console.log('Form data sent successfully');
+                console.log('Form data sent to Google Sheets successfully');
             } catch (error) {
                 console.error('Form submit failed:', error);
             }
