@@ -3368,24 +3368,6 @@
         `;
         document.head.appendChild(notificationStyles);
 
-        // Page Loader
-        window.addEventListener('load', function () {
-            setTimeout(() => {
-                const loader = document.getElementById('pageLoader');
-                if (loader) {
-                    loader.classList.add('hidden');
-                    setTimeout(() => {
-                        loader.style.display = 'none';
-                    }, 600);
-                }
-
-                setTimeout(() => {
-                    animateValue('applicantCount', 0, 500, 200);
-                    animateValue('statApplicants', 0, 500, 200);
-                }, 50);
-            }, 200);
-        });
-
         // Navigation
         let currentCard = 1;
         const totalCards = 4;
@@ -3632,6 +3614,7 @@
                 alert('Payment gateway failed to load. Please refresh and try again.');
                 console.error('Razorpay init error:', e);
             }
+        }
 
         async function submitToGoogleSheets(data) {
             try {
