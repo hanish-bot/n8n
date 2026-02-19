@@ -1848,6 +1848,437 @@
             letter-spacing: 0.1em;
         }
 
+        /* ===== ABOUT THE SHOW SECTION ===== */
+        .about-section {
+            padding: 5rem var(--mobile-padding) 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-intro {
+            max-width: 720px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .about-intro .section-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(255,77,0,0.1);
+            border: 1px solid rgba(255,77,0,0.3);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-intro .section-title {
+            font-size: clamp(2rem, 7vw, 3.2rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, var(--white), var(--gray-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-intro p {
+            font-size: 1rem;
+            color: var(--gray-light);
+            line-height: 1.9;
+        }
+
+        .about-intro p strong {
+            color: var(--accent);
+            -webkit-text-fill-color: var(--accent);
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+        }
+
+        .concept-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .concept-card.accent-orange::before { background: linear-gradient(90deg, var(--accent), var(--accent-secondary)); }
+        .concept-card.accent-purple::before { background: linear-gradient(90deg, var(--purple), var(--blue)); }
+        .concept-card.accent-green::before  { background: linear-gradient(90deg, var(--success), #00cc6a); }
+        .concept-card.accent-pink::before   { background: linear-gradient(90deg, var(--pink), var(--purple)); }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        .concept-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .concept-card h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            color: var(--white);
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+        }
+
+        .concept-card p {
+            font-size: 0.88rem;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        /* ===== EPISODE FORMAT ===== */
+        .episode-section {
+            padding: 4rem var(--mobile-padding);
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(180deg, transparent, rgba(255,77,0,0.03), transparent);
+        }
+
+        .episode-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .episode-header .section-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--purple);
+            background: rgba(139,92,246,0.1);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .episode-header h2 {
+            font-size: clamp(1.8rem, 6vw, 2.8rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--white), var(--gray-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.8rem;
+        }
+
+        .episode-header p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+        }
+
+        .episodes-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .episode-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 1.4rem 1.5rem;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .episode-item:hover {
+            border-color: rgba(255,77,0,0.25);
+            background: rgba(255,77,0,0.04);
+            transform: translateX(6px);
+        }
+
+        .episode-num {
+            min-width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .episode-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.02em;
+        }
+
+        .episode-info p {
+            font-size: 0.82rem;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        .episode-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            margin-top: 0.5rem;
+        }
+
+        .tag-intro    { background: rgba(59,130,246,0.15);  color: var(--blue); }
+        .tag-heat     { background: rgba(255,77,0,0.15);    color: var(--accent); }
+        .tag-battle   { background: rgba(139,92,246,0.15);  color: var(--purple); }
+        .tag-final    { background: rgba(0,255,136,0.15);   color: var(--success); }
+        .tag-wild     { background: rgba(236,72,153,0.15);  color: var(--pink); }
+
+        /* ===== TALENT TYPES SECTION ===== */
+        .talent-section {
+            padding: 4rem var(--mobile-padding);
+            position: relative;
+            z-index: 1;
+        }
+
+        .talent-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .talent-header .section-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--success);
+            background: rgba(0,255,136,0.1);
+            border: 1px solid rgba(0,255,136,0.25);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .talent-header h2 {
+            font-size: clamp(1.8rem, 6vw, 2.8rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--white), var(--gray-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.8rem;
+        }
+
+        .talent-header p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+        }
+
+        .talent-marquee-wrap {
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .talent-marquee-track {
+            display: flex;
+            gap: 1rem;
+            animation: talentScroll 20s linear infinite;
+            width: max-content;
+        }
+
+        .talent-marquee-track.reverse {
+            animation: talentScrollReverse 22s linear infinite;
+        }
+
+        @keyframes talentScroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        @keyframes talentScrollReverse {
+            from { transform: translateX(-50%); }
+            to   { transform: translateX(0); }
+        }
+
+        .talent-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: var(--bg-card);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--gray-light);
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            letter-spacing: 0.03em;
+        }
+
+        .talent-chip span { font-size: 1.1rem; }
+
+        .talent-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .talent-cta p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .talent-cta small {
+            font-size: 0.82rem;
+            color: var(--gray-light);
+        }
+
+        /* ===== PRIZE SECTION ===== */
+        .prize-section {
+            padding: 5rem var(--mobile-padding);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .prize-box {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,77,0,0.2);
+            border-radius: 28px;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prize-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at top, rgba(255,77,0,0.08), transparent 65%);
+            pointer-events: none;
+        }
+
+        .prize-glow-ring {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            position: relative;
+            box-shadow: 0 0 60px rgba(255,77,0,0.4), 0 0 120px rgba(255,77,0,0.15);
+            animation: prizeGlow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes prizeGlow {
+            0%, 100% { box-shadow: 0 0 60px rgba(255,77,0,0.4), 0 0 120px rgba(255,77,0,0.15); }
+            50%       { box-shadow: 0 0 80px rgba(255,77,0,0.6), 0 0 160px rgba(255,77,0,0.25); }
+        }
+
+        .prize-tbd {
+            font-size: clamp(2.8rem, 10vw, 5rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            animation: textGlow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { filter: brightness(1); }
+            50%       { filter: brightness(1.25); }
+        }
+
+        .prize-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .prize-desc {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+            line-height: 1.8;
+            max-width: 480px;
+            margin: 0 auto 2rem;
+        }
+
+        .prize-desc strong {
+            color: var(--white);
+        }
+
+        .prize-perks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .prize-perk {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-light);
+            background: rgba(255,255,255,0.03);
+        }
+
         /* ===== ANIMATIONS ===== */
         .fade-in {
             opacity: 0;
@@ -1862,6 +2293,10 @@
 
         /* ===== RESPONSIVE ===== */
         @media (min-width: 600px) {
+            .concept-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .hero {
                 padding: 5rem 2rem 4rem;
             }
@@ -1890,6 +2325,23 @@
         }
 
         @media (min-width: 769px) {
+            .about-section,
+            .episode-section,
+            .talent-section,
+            .prize-section {
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+
+            .concept-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .prize-box {
+                padding: 4rem 3rem;
+            }
+
             .desktop-nav {
                 display: flex;
             }
@@ -2004,6 +2456,18 @@
         }
 
         @media (min-width: 1025px) {
+            .concept-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .about-section,
+            .episode-section,
+            .talent-section,
+            .prize-section {
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+
             .hero {
                 padding: 0 6rem;
                 gap: 5rem;
@@ -2082,12 +2546,12 @@
         <div class="nav-logo">LOZERS</div>
         <div class="nav-links">
             <a href="#hero" class="nav-link">Home</a>
-            <a href="#features" class="nav-link">Features</a>
-            <a href="#stats" class="nav-link">Stats</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#episodes" class="nav-link">Episodes</a>
+            <a href="#prize" class="nav-link">Prize</a>
             <a href="#timeline" class="nav-link">Timeline</a>
-            <a href="#apply" class="nav-link">Apply</a>
             <a href="#contact" class="nav-link">Contact</a>
-            <a href="#apply" class="nav-cta">Enter Arena</a>
+            <a href="#apply" class="nav-cta">Apply Now</a>
         </div>
     </nav>
 
@@ -2099,16 +2563,27 @@
             </svg>
             <span>Home</span>
         </a>
-        <a href="#features" class="mobile-nav-item" onclick="setActiveNav(this)">
+        <a href="#about" class="mobile-nav-item" onclick="setActiveNav(this)">
             <svg class="mobile-nav-icon" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
             </svg>
-            <span>Features</span>
+            <span>About</span>
+        </a>
+        <a href="#episodes" class="mobile-nav-item" onclick="setActiveNav(this)">
+            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
+                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+            </svg>
+            <span>Episodes</span>
+        </a>
+        <a href="#prize" class="mobile-nav-item" onclick="setActiveNav(this)">
+            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+            </svg>
+            <span>Prize</span>
         </a>
         <a href="#apply" class="mobile-nav-item" onclick="setActiveNav(this)">
             <svg class="mobile-nav-icon" viewBox="0 0 24 24">
-                <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
             </svg>
             <span>Apply</span>
         </a>
@@ -2124,10 +2599,9 @@
                 <span class="line"><span class="word">TALENT</span></span>
             </h1>
             <p class="hero-desc">
-                Where hidden talents become superstars. Whether you sing, dance, perform magic, or have any
-                extraordinary skill - this is YOUR stage.
-                No barriers. No limits. Just pure talent and passion.
-                Ready to show the world what you've got?
+                India's most unfiltered talent competition. Sing, dance, do comedy, magic — kuch bhi.
+                Multiple episodes. Real eliminations. One winner.
+                No scripts. No fake drama. Just <strong style="-webkit-text-fill-color:var(--accent);color:var(--accent);">you and your talent</strong> in front of the world.
             </p>
             <div class="hero-buttons">
                 <a href="#apply" class="cta-btn" onclick="scrollToApply()">
@@ -2181,12 +2655,8 @@
     <!-- Marquee Section -->
     <section class="marquee-section" id="marquee">
         <div class="marquee">
-            <div class="marquee-item">NO EXCUSES <span class="marquee-dot"></span> PROVE YOURSELF <span
-                    class="marquee-dot"></span> WIN OR GO HOME <span class="marquee-dot"></span> NO LOZERS ALLOWED <span
-                    class="marquee-dot"></span></div>
-            <div class="marquee-item">NO EXCUSES <span class="marquee-dot"></span> PROVE YOURSELF <span
-                    class="marquee-dot"></span> WIN OR GO HOME <span class="marquee-dot"></span> NO LOZERS ALLOWED <span
-                    class="marquee-dot"></span></div>
+            <div class="marquee-item">ANY TALENT WELCOME <span class="marquee-dot"></span> PROVE YOURSELF <span class="marquee-dot"></span> WIN OR GO HOME <span class="marquee-dot"></span> INDIA'S MOST UNFILTERED SHOW <span class="marquee-dot"></span> KOI BHI APPLY KAR SAKTA HAI <span class="marquee-dot"></span> SIRF EK WINNER <span class="marquee-dot"></span></div>
+            <div class="marquee-item">ANY TALENT WELCOME <span class="marquee-dot"></span> PROVE YOURSELF <span class="marquee-dot"></span> WIN OR GO HOME <span class="marquee-dot"></span> INDIA'S MOST UNFILTERED SHOW <span class="marquee-dot"></span> KOI BHI APPLY KAR SAKTA HAI <span class="marquee-dot"></span> SIRF EK WINNER <span class="marquee-dot"></span></div>
         </div>
     </section>
 
@@ -2231,6 +2701,182 @@
                 <p class="feature-desc">Your talent and determination matter more than your background or connections.
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- About The Show Section -->
+    <section class="about-section" id="about">
+        <div class="about-intro fade-in">
+            <div class="section-label">What Is LOZERS?</div>
+            <h2 class="section-title">India's Most Unfiltered<br>Talent Show</h2>
+            <p>
+                LOZERS is a raw, unscripted talent competition show — <strong>inspired by the spirit of India's Got Latent</strong> — where real people with real skills come to prove themselves.
+                No nepotism. No industry connections. Just <strong>you and your talent</strong> in front of the world.
+                Every episode, contestants step up, perform, and face the audience's verdict. Only the best survive.
+            </p>
+        </div>
+
+        <div class="concept-grid">
+            <div class="concept-card accent-orange fade-in">
+                <span class="concept-icon">🎭</span>
+                <h3>Any Talent, No Limits</h3>
+                <p>Sing, dance, do standup comedy, magic tricks, beatbox, rap, mimicry, martial arts, painting — if you're good at it, we want to see it. Kuch bhi chalega.</p>
+            </div>
+            <div class="concept-card accent-purple fade-in">
+                <span class="concept-icon">📺</span>
+                <h3>Episode Based Format</h3>
+                <p>Multiple episodes. Each episode brings new contestants, fresh performances, and real-time eliminations. Har episode ek naya drama, ek naya winner.</p>
+            </div>
+            <div class="concept-card accent-green fade-in">
+                <span class="concept-icon">👑</span>
+                <h3>One Final Winner</h3>
+                <p>Episode winners face off in a Grand Finale. The last one standing takes home the title — and the prize. Sirf ek winner hoga. Baaki sab LOZERS.</p>
+            </div>
+            <div class="concept-card accent-pink fade-in">
+                <span class="concept-icon">📲</span>
+                <h3>Online & Viral</h3>
+                <p>The show lives online. Your performance reaches thousands of viewers. Your moment of glory — or defeat — is recorded forever. Duniya dekhegi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Episode Format Section -->
+    <section class="episode-section" id="episodes">
+        <div class="episode-header fade-in">
+            <div class="section-label">Show Format</div>
+            <h2>How The Show Runs</h2>
+            <p>Episode by episode — from auditions to the Grand Finale</p>
+        </div>
+
+        <div class="episodes-list">
+            <div class="episode-item fade-in">
+                <div class="episode-num">EP<br>01</div>
+                <div class="episode-info">
+                    <h4>The Introduction — "Step Into The Arena"</h4>
+                    <p>First episode. Contestants introduce themselves, share their story, and do a short performance. The audience and judges get their first taste. High energy, zero mercy.</p>
+                    <span class="episode-tag tag-intro">Intro Round</span>
+                </div>
+            </div>
+            <div class="episode-item fade-in">
+                <div class="episode-num">EP<br>02+</div>
+                <div class="episode-info">
+                    <h4>The Heats — "Prove You Deserve It"</h4>
+                    <p>Contestants are split into groups. Each heat, they perform their talent — full performance, no half-measures. Judges score, audience votes, and the weak get eliminated. Sirf best aage jayenge.</p>
+                    <span class="episode-tag tag-heat">Heat Rounds</span>
+                </div>
+            </div>
+            <div class="episode-item fade-in">
+                <div class="episode-num">WILD<br>CARD</div>
+                <div class="episode-info">
+                    <h4>Wildcard Episode — "Last Chance"</h4>
+                    <p>Eliminated contestants get one final shot. A special episode where wildcards compete for a single spot back in the competition. Ek baar aur mauka — lekin sirf ek ko milega.</p>
+                    <span class="episode-tag tag-wild">Wildcard</span>
+                </div>
+            </div>
+            <div class="episode-item fade-in">
+                <div class="episode-num">SEMI<br>FINAL</div>
+                <div class="episode-info">
+                    <h4>Semi Finals — "The Last Hurdle"</h4>
+                    <p>The top contestants battle it out in the most intense round yet. Head-to-head performances, live audience reactions, rapid eliminations. Only the finalists survive this round.</p>
+                    <span class="episode-tag tag-battle">Semifinal</span>
+                </div>
+            </div>
+            <div class="episode-item fade-in">
+                <div class="episode-num">GRAND<br>FINAL</div>
+                <div class="episode-info">
+                    <h4>The Grand Finale — "Only One Survives"</h4>
+                    <p>The biggest night. Finalists give everything they have in one last legendary performance. The winner is crowned. The prize is claimed. Ek hi badhega — baaki sab? LOZERS.</p>
+                    <span class="episode-tag tag-final">Grand Finale</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talent Types Section -->
+    <section class="talent-section" id="talent">
+        <div class="talent-header fade-in">
+            <div class="section-label">All Talents Welcome</div>
+            <h2>Kuch Bhi Aata Hai? Apply Karo.</h2>
+            <p>Seriously — any talent qualifies. If you can do it, we want to see it.</p>
+        </div>
+
+        <div class="talent-marquee-wrap fade-in">
+            <div class="talent-marquee-track">
+                <div class="talent-chip"><span>🎤</span> Singing</div>
+                <div class="talent-chip"><span>💃</span> Dance</div>
+                <div class="talent-chip"><span>😂</span> Stand-up Comedy</div>
+                <div class="talent-chip"><span>🎩</span> Magic Tricks</div>
+                <div class="talent-chip"><span>🎸</span> Instrument</div>
+                <div class="talent-chip"><span>🎨</span> Art & Painting</div>
+                <div class="talent-chip"><span>🥋</span> Martial Arts</div>
+                <div class="talent-chip"><span>🎭</span> Acting</div>
+                <div class="talent-chip"><span>🎤</span> Rap / Beatbox</div>
+                <div class="talent-chip"><span>🤸</span> Acrobatics</div>
+                <div class="talent-chip"><span>🎤</span> Singing</div>
+                <div class="talent-chip"><span>💃</span> Dance</div>
+                <div class="talent-chip"><span>😂</span> Stand-up Comedy</div>
+                <div class="talent-chip"><span>🎩</span> Magic Tricks</div>
+                <div class="talent-chip"><span>🎸</span> Instrument</div>
+                <div class="talent-chip"><span>🎨</span> Art & Painting</div>
+                <div class="talent-chip"><span>🥋</span> Martial Arts</div>
+                <div class="talent-chip"><span>🎭</span> Acting</div>
+                <div class="talent-chip"><span>🎤</span> Rap / Beatbox</div>
+                <div class="talent-chip"><span>🤸</span> Acrobatics</div>
+            </div>
+        </div>
+        <div class="talent-marquee-wrap fade-in">
+            <div class="talent-marquee-track reverse">
+                <div class="talent-chip"><span>🎭</span> Mimicry</div>
+                <div class="talent-chip"><span>🪄</span> Illusion</div>
+                <div class="talent-chip"><span>📖</span> Poetry / Shayari</div>
+                <div class="talent-chip"><span>🎬</span> Filmmaking</div>
+                <div class="talent-chip"><span>🧠</span> Mind Games</div>
+                <div class="talent-chip"><span>🎻</span> Classical Music</div>
+                <div class="talent-chip"><span>🕺</span> Street Dance</div>
+                <div class="talent-chip"><span>🎤</span> Spoken Word</div>
+                <div class="talent-chip"><span>🤹</span> Juggling</div>
+                <div class="talent-chip"><span>🎺</span> Any Skill</div>
+                <div class="talent-chip"><span>🎭</span> Mimicry</div>
+                <div class="talent-chip"><span>🪄</span> Illusion</div>
+                <div class="talent-chip"><span>📖</span> Poetry / Shayari</div>
+                <div class="talent-chip"><span>🎬</span> Filmmaking</div>
+                <div class="talent-chip"><span>🧠</span> Mind Games</div>
+                <div class="talent-chip"><span>🎻</span> Classical Music</div>
+                <div class="talent-chip"><span>🕺</span> Street Dance</div>
+                <div class="talent-chip"><span>🎤</span> Spoken Word</div>
+                <div class="talent-chip"><span>🤹</span> Juggling</div>
+                <div class="talent-chip"><span>🎺</span> Any Skill</div>
+            </div>
+        </div>
+        <div class="talent-cta fade-in">
+            <p>Agar kuch bhi aata hai — tu contestant ban sakta hai.</p>
+            <small>No prior experience needed. Just raw, real talent.</small>
+        </div>
+    </section>
+
+    <!-- Prize Section -->
+    <section class="prize-section" id="prize">
+        <div class="prize-box fade-in">
+            <div class="prize-glow-ring">🏆</div>
+            <div class="prize-tbd">PRIZE</div>
+            <div class="prize-label">To Be Announced · Season 01 Winner</div>
+            <p class="prize-desc">
+                The cash prize is <strong>being finalized</strong> — but trust us, it's going to be worth fighting for.
+                The bigger the show gets, the bigger the prize. <strong>More entries = bigger pot.</strong>
+                Stay locked in. Winners don't wait — they prepare.
+            </p>
+            <div class="prize-perks">
+                <div class="prize-perk">🏆 Winner Title</div>
+                <div class="prize-perk">💰 Cash Prize (TBA)</div>
+                <div class="prize-perk">📲 Social Media Feature</div>
+                <div class="prize-perk">🎖️ LOZERS Crown</div>
+                <div class="prize-perk">📺 Show Highlight Reel</div>
+                <div class="prize-perk">🔥 Bragging Rights Forever</div>
+            </div>
+            <a href="#apply" class="cta-btn" style="display: inline-flex; margin: 0 auto;">
+                Secure Your Spot — ₹69
+                <span>→</span>
+            </a>
         </div>
     </section>
 
