@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LOZERS | Showcase Your Talent</title>
-    <link
-        href="https://script.google.com/macros/s/AKfycby9zLUagGLMyrpPCwoF-IXoNWg_oP-L9TvAHjpEwZ59ZGGJboDt7idTkWqjZDisuSNwrw/exec">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <style>
         :root {
@@ -29,6 +30,7 @@
             --pink: #ec4899;
             --pink-glow: rgba(236, 72, 153, 0.4);
             --mobile-padding: 1rem;
+            --primary: #ff4d00;
         }
 
         * {
@@ -1477,6 +1479,16 @@
             box-shadow: 0 8px 30px rgba(255, 77, 0, 0.4);
         }
 
+        .btn-back-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-back-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
         .btn-pay {
             background: linear-gradient(135deg, var(--success), #00cc6a);
             border-color: transparent;
@@ -2344,7 +2356,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Age <span class="required">*</span></label>
-                    <input type="number" class="form-input" id="age" placeholder="18+" min="18" max="50" required>
+                    <input type="number" class="form-input" id="age" placeholder="18+" min="18" max="60" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Address Line <span class="required">*</span></label>
@@ -2413,8 +2425,8 @@
                 </p>
                 <div
                     style="background: rgba(255,255,255,0.03); border: 2px dashed rgba(255,255,255,0.1); border-radius: 12px; padding: 2rem; text-align: center; margin-bottom: 1.5rem;">
-                    <button onclick="openGoogleFormSmart()" class="btn-card"
-                        style="display: inline-block; background: var(--primary); border: none; padding: 12px 24px; cursor: pointer;">
+                    <button type="button" onclick="openGoogleFormSmart()" class="btn-card"
+                        style="display: inline-block; background: var(--accent); border: none; padding: 12px 24px; cursor: pointer;">
                         🚀 OPEN UPLOAD FORM
                     </button>
                     <p style="font-size: 0.75rem; color: var(--gray); margin-top: 1.2rem;">
@@ -2554,7 +2566,7 @@
                     </svg>
                 </div>
                 <h3 class="contact-label">WhatsApp</h3>
-                <a href="https://wa.me/ 78768 60028" target="_blank" class="contact-link">+91 78768 60028</a>
+                <a href="https://wa.me/917876860028" target="_blank" class="contact-link">+91 78768 60028</a>
             </div>
         </div>
 
@@ -2598,14 +2610,14 @@
             <a href="#" class="footer-link">Privacy</a>
             <a href="#contact" class="footer-link">Contact</a>
         </div>
-        <div class="footer-copy">© 2026 LOZERS. ALL RIGHTS RESERVED.</div>
+        <div class="footer-copy">© <script>document.write(new Date().getFullYear())</script> LOZERS. ALL RIGHTS RESERVED.</div>
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // Configuration
-        const RAZORPAY_KEY_ID = 'rzp_test_YOUR_KEY_HERE'; // Demo mode - will auto-submit after 2 seconds
-        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycby9zLUagGLMyrpPCwoF-IXoNWg_oP-L9TvAHjpEwZ59ZGGJboDt7idTkWqjZDisuSNwrw/exec';
+        const RAZORPAY_KEY_ID = 'rzp_test_YOUR_KEY_HERE'; // Replace with your actual Razorpay key
+        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxU59Akcs_vtYczL7SpP8Jd_jq9oW20Fbp3ZJkfpFjaccq7y86Sp-hLg6kjRPT1BfzLmA/exec';
         const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScojZoa7_aQsDKQN02Ei-uL8PeHLVdJ4BSmZnnDiuJSnmYT_g/viewform';
 
         // Smart Google Form Opener with Auto-Detection
@@ -2886,7 +2898,7 @@
                 }
 
                 // Min length for textareas
-                if (input.tagName === 'TEXTAREA' && val.length < 10) {
+                if (input.tagName === 'TEXTAREA' && val.length < 20) {
                     showError(input, 'Please write at least 20 characters');
                     return false;
                 }
@@ -2980,24 +2992,26 @@
                 }
             };
 
-            const rzp = new Razorpay(options);
-            rzp.open();
-        }
-
-        function showSuccess() {
-            document.querySelectorAll('.form-card[data-card]').forEach(card => {
-                card.style.display = 'none';
-            });
-            document.getElementById('successCard').classList.add('show');
-        }
+            try {
+                const rzp = new Razorpay(options);
+                rzp.open();
+            } catch (e) {
+                document.getElementById('formLoading').classList.remove('show');
+                alert('Payment gateway failed to load. Please refresh and try again.');
+                console.error('Razorpay init error:', e);
+            }
 
         async function submitToGoogleSheets(data) {
             try {
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 10000);
                 await fetch(GOOGLE_SHEETS_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'text/plain' },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(data),
+                    signal: controller.signal
                 });
+                clearTimeout(timeout);
                 console.log('Form data sent successfully');
             } catch (error) {
                 console.error('Form submit failed:', error);
