@@ -3239,10 +3239,14 @@
             <a href="#" class="footer-link">Privacy</a>
             <a href="#contact" class="footer-link">Contact</a>
         </div>
-        <div class="footer-copy">© <script>document.write(new Date().getFullYear())</script> LOZERS. ALL RIGHTS RESERVED.</div>
+        <div class="footer-copy">© <span id="footerYear"></span> LOZERS. ALL RIGHTS RESERVED.</div>
     </footer>
 
     <script>
+        // Footer year
+        var fy = document.getElementById('footerYear');
+        if (fy) fy.textContent = new Date().getFullYear();
+
         // Configuration
         const RAZORPAY_KEY_ID = 'rzp_live_SHgl4ZiJOd3VO6';
         const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxU59Akcs_vtYczL7SpP8Jd_jq9oW20Fbp3ZJkfpFjaccq7y86Sp-hLg6kjRPT1BfzLmA/exec';
