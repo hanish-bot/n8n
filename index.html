@@ -3013,8 +3013,16 @@
                     <input type="number" class="form-input" id="age" placeholder="18+" min="18" max="60" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Address Line <span class="required">*</span></label>
-                    <input type="text" class="form-input" id="address1" placeholder="House No., Street, Area" required>
+                    <label class="form-label">Address <span class="required">*</span></label>
+                    <input type="text" class="form-input" id="address1" placeholder="Full address (City, State)" required>
+                </div>
+                <div class="form-group" style="margin-top:0.5rem;">
+                    <label class="form-label" style="font-size:0.8rem; color:var(--gray-light);">House / Flat No. <span class="required">*</span></label>
+                    <input type="text" class="form-input" id="houseNo" placeholder="e.g. Flat 4B, Block C" required>
+                </div>
+                <div class="form-group" style="margin-top:0.5rem;">
+                    <label class="form-label" style="font-size:0.8rem; color:var(--gray-light);">Street / Area <span class="required">*</span></label>
+                    <input type="text" class="form-input" id="streetArea" placeholder="e.g. MG Road, Sector 12" required>
                 </div>
 
                 <div class="card-actions">
@@ -3597,6 +3605,8 @@
 
             document.getElementById('formLoading').classList.add('show');
 
+            const houseEl = document.getElementById('houseNo');
+            const streetEl = document.getElementById('streetArea');
             const formData = {
                 fullName: document.getElementById('fullName').value,
                 email: document.getElementById('email').value,
@@ -3604,6 +3614,8 @@
                 whatsapp: document.getElementById('whatsapp').value,
                 age: document.getElementById('age').value,
                 address1: document.getElementById('address1').value,
+                houseNo: houseEl ? houseEl.value : '',
+                streetArea: streetEl ? streetEl.value : '',
                 socialMedia: document.getElementById('socialMedia').value,
                 whyNotLoser: document.getElementById('whyNotLoser').value,
                 whatMakesUnique: document.getElementById('whatMakesUnique').value,
@@ -3666,16 +3678,27 @@
 
         async function submitToGoogleSheets(data) {
             try {
-                // Use no-cors so request reaches Google Sheets even without CORS headers
+                // Primary: POST with no-cors
                 await fetch(GOOGLE_SHEETS_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'text/plain' },
                     body: JSON.stringify(data)
                 });
-                console.log('Form data sent to Google Sheets successfully');
+                console.log('Form data sent via POST (no-cors)');
             } catch (error) {
-                console.error('Form submit failed:', error);
+                console.error('POST failed:', error);
+            }
+            try {
+                // Fallback: GET request with data as query param
+                const encoded = encodeURIComponent(JSON.stringify(data));
+                await fetch(GOOGLE_SHEETS_URL + '?data=' + encoded, {
+                    method: 'GET',
+                    mode: 'no-cors'
+                });
+                console.log('Form data sent via GET fallback');
+            } catch (error) {
+                console.error('GET fallback failed:', error);
             }
         }
 
