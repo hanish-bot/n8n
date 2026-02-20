@@ -3013,16 +3013,8 @@
                     <input type="number" class="form-input" id="age" placeholder="18+" min="18" max="60" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Address <span class="required">*</span></label>
-                    <input type="text" class="form-input" id="address1" placeholder="Full address (City, State)" required>
-                </div>
-                <div class="form-group" style="margin-top:0.5rem;">
-                    <label class="form-label" style="font-size:0.8rem; color:var(--gray-light);">House / Flat No. <span class="required">*</span></label>
-                    <input type="text" class="form-input" id="houseNo" placeholder="e.g. Flat 4B, Block C" required>
-                </div>
-                <div class="form-group" style="margin-top:0.5rem;">
-                    <label class="form-label" style="font-size:0.8rem; color:var(--gray-light);">Street / Area <span class="required">*</span></label>
-                    <input type="text" class="form-input" id="streetArea" placeholder="e.g. MG Road, Sector 12" required>
+                    <label class="form-label">City / State <span class="required">*</span></label>
+                    <input type="text" class="form-input" id="address1" placeholder="e.g. Mumbai, Maharashtra" required>
                 </div>
 
                 <div class="card-actions">
@@ -3605,17 +3597,13 @@
 
             document.getElementById('formLoading').classList.add('show');
 
-            const houseEl = document.getElementById('houseNo');
-            const streetEl = document.getElementById('streetArea');
             const formData = {
                 fullName: document.getElementById('fullName').value,
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
                 whatsapp: document.getElementById('whatsapp').value,
                 age: document.getElementById('age').value,
-                address1: document.getElementById('address1').value,
-                houseNo: houseEl ? houseEl.value : '',
-                streetArea: streetEl ? streetEl.value : '',
+                cityState: document.getElementById('address1').value,
                 socialMedia: document.getElementById('socialMedia').value,
                 whyNotLoser: document.getElementById('whyNotLoser').value,
                 whatMakesUnique: document.getElementById('whatMakesUnique').value,
