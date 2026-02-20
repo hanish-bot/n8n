@@ -1129,28 +1129,32 @@
         }
 
         .timeline-item {
-            display: block;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 1.2rem;
             margin-bottom: 1.5rem;
-            position: relative;
         }
 
         .timeline-dot {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
             background: linear-gradient(135deg, var(--accent), var(--purple));
             border-radius: 50%;
             font-weight: 800;
             font-size: 0.75rem;
             color: #fff;
             box-shadow: 0 4px 16px rgba(255, 77, 0, 0.4);
-            margin-bottom: 0.75rem;
+            margin-top: 0.25rem;
         }
 
         .timeline-content {
-            padding: 1.5rem;
+            flex: 1;
+            padding: 1.25rem 1.5rem;
             background: linear-gradient(165deg, rgba(25, 25, 35, 0.95), rgba(10, 10, 15, 0.98));
             border: 1px solid rgba(255, 77, 0, 0.18);
             border-left: 3px solid var(--accent);
@@ -1159,9 +1163,9 @@
         }
 
         .timeline-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             color: var(--white);
         }
 
@@ -2449,22 +2453,13 @@
             }
 
             .timeline-item {
-                display: flex;
-                align-items: center;
                 gap: 1.5rem;
             }
 
             .timeline-dot {
-                margin-bottom: 0;
-                flex-shrink: 0;
                 width: 52px;
                 height: 52px;
                 font-size: 0.9rem;
-            }
-
-            .timeline-content {
-                flex: 1;
-                margin: 0;
             }
 
             .apply-section {
@@ -2627,8 +2622,8 @@
                 <span class="line"><span class="word">TALENT</span></span>
             </h1>
             <p class="hero-desc">
-                Har episode mein naye contestants aate hain — apna talent dikhate hain — aur us episode ka winner decide hota hai. On the spot. No waiting.
-                Koi bhi apply kar sakta hai. <strong style="-webkit-text-fill-color:var(--accent);color:var(--accent);">Kuch bhi talent ho</strong> — yahi teri stage hai.
+                Every episode brings new contestants — they showcase their talent — and the winner is decided on the spot. No waiting.
+                Anyone can apply. <strong style="-webkit-text-fill-color:var(--accent);color:var(--accent);">Any talent counts</strong> — this is your stage.
             </p>
             <div class="hero-buttons">
                 <a href="#apply" class="cta-btn" onclick="scrollToApply()">
@@ -2663,7 +2658,7 @@
                 <div class="card-badge">SEASON 01</div>
                 <div class="card-content">
                     <div class="card-title">Applications Open</div>
-                    <div class="card-desc">Perform. Get judged. Win the same episode. Baaki sab LOZERS.</div>
+                    <div class="card-desc">Perform. Get judged. Win the same episode. The rest? LOZERS.</div>
                     <div class="card-stats">
                         <div class="card-stat">
                             <div class="card-stat-value" id="applicantCount">0</div>
@@ -2682,48 +2677,48 @@
     <!-- Marquee Section -->
     <section class="marquee-section" id="marquee">
         <div class="marquee">
-            <div class="marquee-item">ANY TALENT WELCOME <span class="marquee-dot"></span> PROVE YOURSELF <span class="marquee-dot"></span> WIN OR GO HOME <span class="marquee-dot"></span> INDIA'S MOST UNFILTERED SHOW <span class="marquee-dot"></span> KOI BHI APPLY KAR SAKTA HAI <span class="marquee-dot"></span> SIRF EK WINNER <span class="marquee-dot"></span></div>
-            <div class="marquee-item">ANY TALENT WELCOME <span class="marquee-dot"></span> PROVE YOURSELF <span class="marquee-dot"></span> WIN OR GO HOME <span class="marquee-dot"></span> INDIA'S MOST UNFILTERED SHOW <span class="marquee-dot"></span> KOI BHI APPLY KAR SAKTA HAI <span class="marquee-dot"></span> SIRF EK WINNER <span class="marquee-dot"></span></div>
+            <div class="marquee-item">ANY TALENT WELCOME <span class="marquee-dot"></span> PROVE YOURSELF <span class="marquee-dot"></span> WIN OR GO HOME <span class="marquee-dot"></span> INDIA'S MOST UNFILTERED SHOW <span class="marquee-dot"></span> ANYONE CAN APPLY <span class="marquee-dot"></span> ONLY ONE WINNER <span class="marquee-dot"></span></div>
+            <div class="marquee-item">ANY TALENT WELCOME <span class="marquee-dot"></span> PROVE YOURSELF <span class="marquee-dot"></span> WIN OR GO HOME <span class="marquee-dot"></span> INDIA'S MOST UNFILTERED SHOW <span class="marquee-dot"></span> ANYONE CAN APPLY <span class="marquee-dot"></span> ONLY ONE WINNER <span class="marquee-dot"></span></div>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features-section" id="features">
         <div class="section-header fade-in">
-            <div class="section-label">Kyun Apply Karo?</div>
-            <h2 class="section-title">LOZERS Alag Kyun Hai</h2>
-            <p class="section-subtitle">Ek show jo exactly waisa hai jaise hona chahiye — real, raw, aur result wala</p>
+            <div class="section-label">Why Apply?</div>
+            <h2 class="section-title">Why LOZERS Is Different</h2>
+            <p class="section-subtitle">A show that is exactly how it should be — real, raw, and result-driven</p>
         </div>
         <div class="features-grid">
             <div class="feature-card fade-in">
                 <div class="feature-icon">⚡</div>
                 <h3 class="feature-title">Same Episode Winner</h3>
-                <p class="feature-desc">Koi weeks ka wait nahi. Perform karo, verdict suno, winner wahi declare hota hai — us episode mein hi. Instant result.</p>
+                <p class="feature-desc">No waiting weeks. Perform, get the verdict, and the winner is declared right there — in the same episode. Instant result.</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon">🎭</div>
-                <h3 class="feature-title">Koi Bhi Talent</h3>
-                <p class="feature-desc">Singer ho, dancer ho, comedian ho, magician ho — ya kuch bhi aata ho. Har talent ko yahan mauka milta hai. No discrimination.</p>
+                <h3 class="feature-title">Any Talent Welcome</h3>
+                <p class="feature-desc">Singer, dancer, comedian, magician — or anything else you can do. Every talent gets a shot here. No discrimination.</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon">📲</div>
                 <h3 class="feature-title">Online Reach</h3>
-                <p class="feature-desc">Tera performance online hoga. Hazaron log dekhenge. Ek strong act duniya mein viral ho sakta hai — aur teri life change kar sakta hai.</p>
+                <p class="feature-desc">Your performance goes online. Thousands will watch. One strong act can go viral worldwide — and change your life forever.</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon">💰</div>
                 <h3 class="feature-title">Real Big Prize</h3>
-                <p class="feature-desc">Har episode ka winner ek bada prize lekar jaata hai. Amount TBA — but it's real reward for real talent. Koi fake promise nahi.</p>
+                <p class="feature-desc">Every episode winner takes home a big prize. Amount TBA — but it's a real reward for real talent. No fake promises.</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon">🔥</div>
                 <h3 class="feature-title">Zero Fake Drama</h3>
-                <p class="feature-desc">No scripted fights, no producer manipulation, no PR games. Sirf tera talent bolega. Audience decide karti hai — aur unhe koi bhi fool nahi kar sakta.</p>
+                <p class="feature-desc">No scripted fights, no producer manipulation, no PR games. Only your talent speaks. The audience decides — and no one can fool them.</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon">🏆</div>
                 <h3 class="feature-title">Multiple Episodes = Multiple Chances</h3>
-                <p class="feature-desc">Ek show mein nahi jeet paaya? Koi nahi — agli episode mein phir apply karo. Har episode fresh start hai. Teri next chance ready hai.</p>
+                <p class="feature-desc">Didn't win in one episode? No problem — apply again for the next one. Every episode is a fresh start. Your next chance is always ready.</p>
             </div>
         </div>
     </section>
@@ -2732,34 +2727,34 @@
     <section class="about-section" id="about">
         <div class="about-intro fade-in">
             <div class="section-label">What Is LOZERS?</div>
-            <h2 class="section-title">Har Episode — Naye Contestants.<br>Har Episode — Ek Winner.</h2>
+            <h2 class="section-title">Every Episode — New Contestants.<br>Every Episode — One Winner.</h2>
             <p>
                 LOZERS is a raw, unscripted online talent show — <strong>inspired by India's Got Latent</strong> — with a simple, brutal format.
-                Har episode mein contestants aate hain, apna talent dikhate hain, aur <strong>us hi episode mein winner decide ho jaata hai.</strong>
-                No grand finale drama. No waiting weeks. Jo best hai woh jeet jaata hai — right there, right then.
+                Every episode brings contestants who showcase their talent, and <strong>the winner is decided right in that same episode.</strong>
+                No grand finale drama. No waiting weeks. The best one wins — right there, right then.
             </p>
         </div>
 
         <div class="concept-grid">
             <div class="concept-card accent-orange fade-in">
                 <span class="concept-icon">🎭</span>
-                <h3>Kuch Bhi Talent</h3>
-                <p>Singing, dancing, standup, magic, rap, beatbox, mimicry, painting, martial arts — agar kuch bhi aata hai tujhe, yahi teri stage hai.</p>
+                <h3>Any Talent Works</h3>
+                <p>Singing, dancing, standup, magic, rap, beatbox, mimicry, painting, martial arts — whatever you can do, this is your stage.</p>
             </div>
             <div class="concept-card accent-purple fade-in">
                 <span class="concept-icon">⚡</span>
                 <h3>Same Episode, Same Winner</h3>
-                <p>Contestants perform aur us episode ka winner wahi decide hota hai. No rounds, no waiting, no complex brackets. Perform karo, jeeto — ya LOZER ban jao.</p>
+                <p>Contestants perform and the episode winner is decided right there. No rounds, no waiting, no complex brackets. Perform and win — or become a LOZER.</p>
             </div>
             <div class="concept-card accent-green fade-in">
                 <span class="concept-icon">👑</span>
                 <h3>Har Episode Ka Champion</h3>
-                <p>Har episode ka apna winner hoga. Ek episode, ek crown, ek prize. Multiple episodes — multiple chances to become a LOZERS champion.</p>
+                <p>Every episode has its own winner. One episode, one crown, one prize. Multiple episodes — multiple chances to become a LOZERS champion.</p>
             </div>
             <div class="concept-card accent-pink fade-in">
                 <span class="concept-icon">📲</span>
                 <h3>Online & Viral</h3>
-                <p>Show runs online. Tera performance duniya dekhegi. Glory ya defeat — dono viral ho sakti hain. Tujhe decide karna hai which one it'll be.</p>
+                <p>The show runs online. Your performance will be seen worldwide. Glory or defeat — both can go viral. You decide which one it'll be.</p>
             </div>
         </div>
     </section>
@@ -2768,8 +2763,8 @@
     <section class="episode-section" id="episodes">
         <div class="episode-header fade-in">
             <div class="section-label">Show Format</div>
-            <h2>Ek Episode. Ek Winner. Simple.</h2>
-            <p>Har episode self-contained hai — contestants aate hain, perform karte hain, winner usi din decide hota hai</p>
+            <h2>One Episode. One Winner. Simple.</h2>
+            <p>Every episode is self-contained — contestants come, perform, and the winner is decided the same day.</p>
         </div>
 
         <div class="episodes-list">
@@ -2777,7 +2772,7 @@
                 <div class="episode-num">STEP<br>01</div>
                 <div class="episode-info">
                     <h4>Contestants Enter The Stage</h4>
-                    <p>Har episode mein fresh contestants aate hain — koi bhi, koi bhi background se. Apna naam batao, apni story batao, aur stage pe aa jao.</p>
+                    <p>Every episode brings fresh contestants — anyone, from any background. Share your name, your story, and step onto the stage.</p>
                     <span class="episode-tag tag-intro">Entry</span>
                 </div>
             </div>
@@ -2785,7 +2780,7 @@
                 <div class="episode-num">STEP<br>02</div>
                 <div class="episode-info">
                     <h4>Talent Performance — No Filter</h4>
-                    <p>Har contestant apna talent perform karta hai — poora, uncut, unscripted. Singing, dancing, comedy, magic, rap — kuch bhi. Audience real-time mein dekh rahi hai.</p>
+                    <p>Every contestant performs their talent — fully, uncut, unscripted. Singing, dancing, comedy, magic, rap — anything goes. The audience watches in real time.</p>
                     <span class="episode-tag tag-heat">Live Performance</span>
                 </div>
             </div>
@@ -2793,7 +2788,7 @@
                 <div class="episode-num">STEP<br>03</div>
                 <div class="episode-info">
                     <h4>Judging — Real, Raw, Honest</h4>
-                    <p>Performance ke baad turant feedback. Koi sugarcoating nahi — agar tera talent strong hai toh crown milega, agar nahi toh... tu jaanta hai kya bolenge. LOZER.</p>
+                    <p>Instant feedback right after the performance. No sugarcoating — if your talent is strong, you get the crown. If not... you already know what they'll say. LOZER.</p>
                     <span class="episode-tag tag-battle">Verdict</span>
                 </div>
             </div>
@@ -2801,14 +2796,14 @@
                 <div class="episode-num">STEP<br>04</div>
                 <div class="episode-info">
                     <h4>Episode Winner — Crowned On The Spot</h4>
-                    <p>Us episode ka best performer winner declare hota hai — wahi raat, wahi episode. Big prize milta hai. Baaki sab? LOZERS. Agle episode mein naye contestants, fresh battle.</p>
+                    <p>The best performer of that episode is declared the winner — same night, same episode. Big prize awaits. The rest? LOZERS. Next episode brings new contestants and a fresh battle.</p>
                     <span class="episode-tag tag-final">Winner 🏆</span>
                 </div>
             </div>
         </div>
 
         <div style="text-align:center; margin-top: 2.5rem;" class="fade-in">
-            <p style="font-size:0.9rem; color:var(--gray-light); margin-bottom:1rem;">Har episode ka apna winner hoga. <strong style="color:var(--white);">Multiple episodes = Multiple chances.</strong></p>
+            <p style="font-size:0.9rem; color:var(--gray-light); margin-bottom:1rem;">Every episode has its own winner. <strong style="color:var(--white);">Multiple episodes = Multiple chances.</strong></p>
             <a href="#apply" class="cta-btn" style="display:inline-flex;">
                 Apply For Next Episode
                 <span>→</span>
@@ -2820,7 +2815,7 @@
     <section class="talent-section" id="talent">
         <div class="talent-header fade-in">
             <div class="section-label">All Talents Welcome</div>
-            <h2>Kuch Bhi Aata Hai? Apply Karo.</h2>
+            <h2>Got Any Talent? Apply Now.</h2>
             <p>Seriously — any talent qualifies. If you can do it, we want to see it.</p>
         </div>
 
@@ -2873,7 +2868,7 @@
             </div>
         </div>
         <div class="talent-cta fade-in">
-            <p>Agar kuch bhi aata hai — tu contestant ban sakta hai.</p>
+            <p>If you have any talent — you can be a contestant.</p>
             <small>No prior experience needed. Just raw, real talent.</small>
         </div>
     </section>
@@ -2883,11 +2878,11 @@
         <div class="prize-box fade-in">
             <div class="prize-glow-ring">🏆</div>
             <div class="prize-tbd">BIG<br>PRIZE</div>
-            <div class="prize-label">Har Episode Ka Winner Lekar Jaata Hai — Stay Tuned</div>
+            <div class="prize-label">Every Episode Winner Takes It Home — Stay Tuned</div>
             <p class="prize-desc">
-                Prize abhi officially announce nahi hua — lekin <strong>har episode ka winner ek bada prize lekar jaata hai.</strong>
-                Jitne zyada contestants, utna bada prize pool. <strong>Teri entry prize ko grow karti hai.</strong>
-                Announcement ka wait karo — ya abhi apply karke ready raho.
+                The prize has not been officially announced yet — but <strong>every episode winner takes home a big prize.</strong>
+                More contestants mean a bigger prize pool. <strong>Your entry helps grow the prize.</strong>
+                Wait for the announcement — or apply now and be ready.
             </p>
             <div class="prize-perks">
                 <div class="prize-perk">🏆 Episode Winner Crown</div>
@@ -2898,7 +2893,7 @@
                 <div class="prize-perk">⚡ Decided Same Episode</div>
             </div>
             <a href="#apply" class="cta-btn" style="display: inline-flex; margin: 0 auto;">
-                Apply Now — ₹69
+                Apply Now — ₹100
                 <span>→</span>
             </a>
         </div>
@@ -2909,59 +2904,59 @@
         <div class="stat-card fade-in">
             <div class="stat-number" id="statApplicants">0</div>
             <div class="stat-label">Applications</div>
-            <div class="stat-desc">Aur aate ja rahe hain</div>
+            <div class="stat-desc">And growing</div>
         </div>
         <div class="stat-card fade-in">
             <div class="stat-number">1</div>
             <div class="stat-label">Winner Per Episode</div>
-            <div class="stat-desc">Har episode ka apna champion</div>
+            <div class="stat-desc">Each episode's own champion</div>
         </div>
         <div class="stat-card fade-in">
             <div class="stat-number">∞</div>
             <div class="stat-label">Talent Types</div>
-            <div class="stat-desc">Kuch bhi chalega</div>
+            <div class="stat-desc">Anything goes</div>
         </div>
         <div class="stat-card fade-in">
-            <div class="stat-number">₹69</div>
+            <div class="stat-number">₹100</div>
             <div class="stat-label">Entry Fee</div>
-            <div class="stat-desc">Sirf serious contestants</div>
+            <div class="stat-desc">Serious contestants only</div>
         </div>
     </section>
 
     <!-- Timeline Section -->
     <section class="timeline-section" id="timeline">
         <div class="section-header fade-in">
-            <div class="section-label">Tera Journey</div>
-            <h2 class="section-title">Apply Se Winner Tak</h2>
-            <p class="section-subtitle">Sirf 4 steps — apply karo aur stage pe aa jao</p>
+            <div class="section-label">Your Journey</div>
+            <h2 class="section-title">From Apply to Winner</h2>
+            <p class="section-subtitle">Just 4 steps — apply and get on stage</p>
         </div>
         <div class="timeline">
             <div class="timeline-item fade-in">
                 <div class="timeline-dot">01</div>
                 <div class="timeline-content">
-                    <h3 class="timeline-title">Apply Online — ₹69</h3>
-                    <p class="timeline-desc">Form fill karo, ₹69 entry fee pay karo. Bas itna. Koi audition nahi, koi callback ka wait nahi — apply karo aur lock ho jao.</p>
+                    <h3 class="timeline-title">Apply Online — ₹100</h3>
+                    <p class="timeline-desc">Fill out the form and pay the ₹100 entry fee. That's it. No audition, no waiting for callbacks — apply and lock your spot.</p>
                 </div>
             </div>
             <div class="timeline-item fade-in">
                 <div class="timeline-dot">02</div>
                 <div class="timeline-content">
-                    <h3 class="timeline-title">Talent Video Submit Karo</h3>
-                    <p class="timeline-desc">Apna best talent video upload karo — jo bhi aata hai wo dikhao. Yahi tera first impression hai. Make it count.</p>
+                    <h3 class="timeline-title">Submit Your Talent Video</h3>
+                    <p class="timeline-desc">Upload your best talent video — show us what you've got. This is your first impression. Make it count.</p>
                 </div>
             </div>
             <div class="timeline-item fade-in">
                 <div class="timeline-dot">03</div>
                 <div class="timeline-content">
-                    <h3 class="timeline-title">Episode Mein Call Aata Hai</h3>
-                    <p class="timeline-desc">Team review karegi. Agar tu fit hai toh ek episode ke liye select hoga. Apna date milega, apna slot milega — bas ready rehna.</p>
+                    <h3 class="timeline-title">Get Called for an Episode</h3>
+                    <p class="timeline-desc">Our team will review your application. If you're a fit, you'll be selected for an episode. You'll get your date and your slot — just stay ready.</p>
                 </div>
             </div>
             <div class="timeline-item fade-in">
                 <div class="timeline-dot">04</div>
                 <div class="timeline-content">
-                    <h3 class="timeline-title">Stage Pe Aa, Perform Kar, Jeet</h3>
-                    <p class="timeline-desc">Episode mein aao, apna talent dikhao, judges ka verdict suno — aur agar tu sach mein best hai, toh us episode ka winner crown mil jaata hai. Big prize. Baaki sab? LOZERS.</p>
+                    <h3 class="timeline-title">Come on Stage, Perform, Win</h3>
+                    <p class="timeline-desc">Show up for the episode, showcase your talent, hear the judges' verdict — and if you're truly the best, the winner's crown is yours. Big prize. The rest? LOZERS.</p>
                 </div>
             </div>
         </div>
@@ -2972,7 +2967,7 @@
         <div class="apply-header fade-in">
             <div class="apply-label">Step Into The Arena</div>
             <h2 class="apply-title">Ready to Prove Yourself?</h2>
-            <p class="apply-subtitle">Complete your application & pay ₹69 to enter</p>
+            <p class="apply-subtitle">Complete your application & pay ₹100 to enter</p>
         </div>
 
         <div class="cards-container" id="cardsContainer">
@@ -3123,7 +3118,7 @@
                 </div>
                 <h3 class="form-title">Secure Your Spot</h3>
                 <div class="payment-info">
-                    <div class="payment-amount">₹69</div>
+                    <div class="payment-amount">₹100</div>
                     <div class="payment-text">Entry Fee - Non Refundable</div>
                 </div>
                 <div class="form-group">
@@ -3134,7 +3129,7 @@
                 <div class="form-group" style="margin-top: 1rem;">
                     <div
                         style="max-height: 120px; overflow-y: auto; padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); font-size: 0.7rem; color: var(--gray-light);">
-                        <p><strong>1. Entry Fee:</strong> The ₹69 entry fee is non-refundable.</p>
+                        <p><strong>1. Entry Fee:</strong> The ₹100 entry fee is non-refundable.</p>
                         <p><strong>2. Selection:</strong> Decisions are final and binding.</p>
                         <p><strong>3. Accuracy:</strong> False info leads to disqualification.</p>
                     </div>
@@ -3147,7 +3142,7 @@
                 </div>
                 <div class="card-actions">
                     <button class="btn-card btn-back-card" onclick="prevCard()">← Back</button>
-                    <button class="btn-card btn-pay" onclick="initiatePayment()">Pay ₹69 & Submit →</button>
+                    <button class="btn-card btn-pay" onclick="initiatePayment()">Pay ₹100 & Submit →</button>
                 </div>
             </div>
 
@@ -3162,7 +3157,7 @@
                 <p class="success-text">
                     <strong>Your application has been received!</strong>
                     <br><br>
-                    <strong style="color: var(--success); font-size: 1.2rem;">Amount Paid: ₹69</strong>
+                    <strong style="color: var(--success); font-size: 1.2rem;">Amount Paid: ₹100</strong>
                     <br><br>
                     Payment ID: <span id="paymentIdDisplay"
                         style="color: var(--gray-light); font-size: 0.9rem;">Processing...</span>
@@ -3230,7 +3225,7 @@
         <!-- QR Code -->
         <div class="qr-section fade-in">
             <h3 class="qr-title">Scan to Apply</h3>
-            <p class="qr-desc">Mobile pe scan karo aur direct site pe aa jao</p>
+            <p class="qr-desc">Scan with your phone and visit the site directly</p>
             <div class="qr-box">
                 <div id="qrcode"></div>
             </div>
@@ -3301,7 +3296,7 @@
         });
 
         // Configuration
-        const RAZORPAY_KEY_ID = 'rzp_live_SHgl4ZiJOd3VO6';
+        const RAZORPAY_KEY_ID = 'rzp_test_YOUR_KEY_HERE';
         const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxU59Akcs_vtYczL7SpP8Jd_jq9oW20Fbp3ZJkfpFjaccq7y86Sp-hLg6kjRPT1BfzLmA/exec';
         const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScojZoa7_aQsDKQN02Ei-uL8PeHLVdJ4BSmZnnDiuJSnmYT_g/viewform';
 
@@ -3614,7 +3609,7 @@
                 whatMakesUnique: document.getElementById('whatMakesUnique').value,
                 videoStatus: "Uploaded via Google Form",
                 pitch: document.getElementById('whyPickYou').value,
-                amount: 69,
+                amount: 100,
                 timestamp: new Date().toISOString()
             };
 
@@ -3634,7 +3629,7 @@
             // Real Razorpay
             const options = {
                 key: RAZORPAY_KEY_ID,
-                amount: 6900,
+                amount: 10000,
                 currency: 'INR',
                 name: 'LOZERS',
                 description: 'Season 01 Application Fee',
@@ -3752,8 +3747,8 @@
 
         // Fade In Animation on Scroll
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.05,
+            rootMargin: '0px 0px 0px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -3766,6 +3761,11 @@
         }, observerOptions);
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Fallback: show all fade-in elements after 3s if observer didn't trigger
+        setTimeout(function() {
+            document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+        }, 3000);
 
         // Page Loader
         var loaderHidden = false;
